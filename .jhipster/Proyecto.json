@@ -1,0 +1,34 @@
+{
+  "name": "Proyecto",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "estatus",
+      "otherEntityRelationshipName": "proyecto",
+      "relationshipName": "estatus",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tarea",
+      "otherEntityRelationshipName": "tarea",
+      "relationshipName": "tarea"
+    }
+  ],
+  "entityTableName": "proyecto",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210930053723"
+}

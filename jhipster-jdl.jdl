@@ -1,0 +1,38 @@
+
+entity Proyecto {
+	nombre String
+}
+
+entity Tarea {
+	nombre String,
+    descripcion String
+}
+
+entity Estatus {
+	nombre String
+}
+
+
+
+relationship OneToOne {
+	Proyecto{estatus} to Estatus,
+    Tarea{estatus} to Estatus
+}
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Proyecto to Tarea{tarea}
+}
+
+
+paginate Proyecto with pagination
+paginate Tarea with pagination
+
+// Use Data Transfer Objects (DTO)
+ dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
